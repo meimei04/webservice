@@ -1,0 +1,1019 @@
+/* --- 1. Thiết lập chung --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    /* Đổi nền nhẹ để làm nổi bật khối nội dung */
+    padding-top: 70px;
+}
+
+/* --- 2. Header & Navbar Custom --- */
+/* --- Nâng cấp Navbar --- */
+.custom-nav {
+    background: #fff !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 252, 252, 0.3);
+    padding: 12px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.nav-scrolled {
+    padding: 8px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.navbar-brand {
+    font-size: 1.6rem !important;
+    letter-spacing: -0.5px;
+}
+
+/* Menu items */
+.nav-item {
+    margin: 0 5px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 16px !important;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #444 !important;
+
+}
+
+/* Hiệu ứng gạch chân (Underline) khi hover thay vì zoom */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0084ff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+    /* Thanh gạch chân dài ra khi di chuột */
+}
+
+.nav-link:hover {
+    color: #0084ff !important;
+}
+
+.nav-link.active {
+    color: #0084ff !important;
+    /* Chuyển chữ sang màu xanh */
+    font-weight: bold;
+}
+
+/* Nút Toggle (Mobile) */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Nút mở Sidebar */
+.bi-list {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .bi-list {
+    color: #0084ff !important;
+
+}
+
+/* apk */
+/* Sidebar (Offcanvas) */
+.offcanvas {
+    border-radius: 0 20px 20px 0;
+    /* Bo góc nhẹ cho sidebar */
+    border: none !important;
+}
+
+.offcanvas-header {
+    padding: 25px;
+}
+
+.offcanvas-title {
+    letter-spacing: 1px;
+    color: #0084ff;
+}
+
+.offcanvas-body {
+    padding: 20px;
+}
+
+.offcanvas-body a {
+    font-weight: 500;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.offcanvas-body a i {
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+/* --- Style cho mục menu đang hoạt động (Active) --- */
+.nav-link.active {
+    color: #0084ff !important;
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    /* Độ dài đường gạch chân */
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0084ff;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+/* --- Fix lỗi mất Header & Logo --- */
+.custom-nav {
+    min-height: 40px;
+    display: flex !important;
+    /* Đảm bảo không bị display: none */
+    z-index: 2000 !important;
+    background: #fff !important;
+     
+}
+
+.logo-img {
+    height: 50px;
+    /* Chiều cao cố định cho logo */
+    width: auto;
+    /* Chiều rộng tự động theo tỉ lệ */
+    object-fit: contain;
+    display: block;
+}
+
+.lang-select {
+    width: 90px !important;
+    font-size: 11px !important;
+    padding: 4px !important;
+    border-radius: 8px;
+}
+
+/* --- Responsive cho Mobile (< 992px) --- */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 75px !important;
+        /* Tránh bị che nội dung */
+    }
+
+    .custom-nav {
+        padding: 5px 0 !important;
+    }
+
+    .logo-img {
+        height: 40px;
+        /* Thu nhỏ logo một chút trên mobile */
+    }
+
+    /* Đảm bảo nút 3 gạch không bị mất màu */
+    .bi-list {
+        color: #0084ff !important;
+    }
+}
+
+/* 1. Ẩn tất cả các class liên quan đến banner Google */
+.goog-te-banner-frame,
+.goog-te-banner,
+.skiptranslate,
+#goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 2. Ép body và html không được nhảy top */
+body {
+    top: 0 !important;
+    position: static !important;
+}
+
+html {
+    margin-top: 0px !important;
+}
+
+/* 3. Ẩn tooltip khó chịu khi rê chuột vào chữ */
+.goog-tooltip {
+    display: none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* --- 3. Hero Slider Section --- */
+.slider-container {
+    position: relative;
+    height: 80vh;
+    width: 95%;
+    overflow: hidden;
+    background-color: #000;
+    margin: 0 auto;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+
+/* end-marquee */
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #0084ff;
+    width: 35px;
+    border-radius: 10px;
+}
+
+/* --- 4. Cụm nút liên hệ nổi (Messenger, WhatsApp, Hotline) --- */
+.contact-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+    align-items: flex-end;
+}
+
+.contact-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: shakeMessenger 6s ease-in-out infinite;
+}
+
+.messenger-float {
+    background-color: #0084ff;
+}
+
+.whatsapp-float {
+    background-color: #25d366;
+    animation-delay: 1s;
+}
+
+.phone-float {
+    background-color: #ff4757;
+    width: auto;
+    padding: 0 20px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.contact-item:hover {
+    transform: scale(1.1) rotate(0deg);
+    animation: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Hiệu ứng nhảy số */
+#phone-number.number-fade {
+    animation: fadeInOut 0.5s ease;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- 5. Services & Contact Section --- */
+.service-box-custom {
+    transition: all 0.3s ease;
+    border: none;
+    background: #fff;
+}
+
+.service-box-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 132, 255, 0.15) !important;
+}
+
+#contactForm {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 6. Hiệu ứng rung --- */
+@keyframes shakeMessenger {
+
+    0%,
+    85%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    86% {
+        transform: rotate(15deg);
+    }
+
+    88% {
+        transform: rotate(-15deg);
+    }
+
+    90% {
+        transform: rotate(15deg);
+    }
+
+    92% {
+        transform: rotate(-15deg);
+    }
+
+    94% {
+        transform: rotate(15deg);
+    }
+
+    96% {
+        transform: rotate(-15deg);
+    }
+
+    98% {
+        transform: rotate(10deg);
+    }
+}
+
+/* ban lãnh đạo */
+/* Container và Tiêu đề */
+.team-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    /* Màu nền nhạt để làm nổi bật card trắng */
+}
+
+/* Cấu trúc Card chung */
+.team-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* Hiệu ứng Hover cho Card */
+.team-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Ảnh đại diện */
+.team-img-wrapper {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.team-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+}
+
+/* Hiệu ứng Hover cho Ảnh */
+.team-card:hover img {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Chức vụ và Tên */
+.team-card .member-name {
+    color: #2d3436;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.team-card .member-position {
+    color: #0d6efd;
+    /* Màu primary của Bootstrap */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-card .member-bio {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #636e72;
+}
+
+/* end-ban lãnh đạo  */
+/* ảnh */
+/* --- TÙY CHỈNH PHẦN SLOGAN & ẢNH CÔNG TY --- */
+#company-culture {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Kiểu dáng cho các câu Slogan bên trái */
+.slogan-container {
+    /* border-left: 4px solid #ff4757; */
+    padding-left: 30px !important;
+}
+
+.slogan-item h5 {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.slogan-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- TÙY CHỈNH ẢNH TO (8 CỘT) --- */
+.company-photo-frame {
+    position: relative;
+    border-radius: 30px;
+    /* Bo góc cực lớn cho sang */
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.company-big-img {
+    width: 100%;
+    height: 580px;
+    /* Cố định chiều cao hoặc để auto tùy ảnh của bạn */
+    object-fit: cover;
+    /* Để ảnh không bị móp méo */
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+
+/* Lớp phủ mờ nhẹ giúp ảnh có chiều sâu */
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 71, 87, 0.1), transparent);
+    pointer-events: none;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 991px) {
+    .slogan-container {
+        border-left: none;
+        border-bottom: 4px solid #ff4757;
+        padding-left: 0 !important;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    .company-big-img {
+        height: 300px;
+    }
+}
+
+
+/* --- 7. Footer --- */
+/* --- PHẦN 1 (TRÊN): TRẮNG/XÁM NHẠT --- */
+.footer-top-info {
+    background-color: #e7dfdf;
+    /* Màu trắng xám cực nhẹ để nổi chữ xanh */
+    color: #333;
+    border-top: 1px solid #eee;
+}
+
+.footer-top-info h5 {
+    font-size: 1.1rem;
+    color: #222;
+    /* Tiêu đề đậm rõ ràng */
+}
+
+.footer-links a {
+    color: #007bff;
+    /* Màu xanh link y hệt ảnh bạn gửi */
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* --- PHẦN 2 (DƯỚI): ĐEN TUYỀN --- */
+.footer-bottom-black {
+    background-color: #111111;
+    /* Đen đậm nhất */
+    color: #888;
+    /* Chữ copyright màu xám nhẹ cho tinh tế */
+}
+
+/* Tùy chỉnh các ô VISA, PAYPAL... */
+.badge-custom {
+    background-color: #333;
+    /* Ô màu xám trên nền đen */
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 1px solid #444;
+}
+
+/* Nút gọi đỏ Hotline (Phần floating button) */
+.phone-float-badge {
+    background-color: #ff4757;
+    /* Màu đỏ hồng y hệt ảnh */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* faq's */
+
+/* --- FAQ Custom Style --- */
+.faq-header {
+    border: 1px solid #333;
+}
+
+.decoration-circle {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    border: 40px solid #fff;
+    border-radius: 50%;
+    opacity: 0.9;
+}
+
+.custom-faq .accordion-item {
+    border: 1px solid #444 !important;
+}
+
+/* Tùy chỉnh nút bấm (Dấu mũi tên/cộng) */
+.custom-faq .accordion-button {
+    padding: 20px;
+}
+
+/* Ẩn mũi tên mặc định của Bootstrap */
+.custom-faq .accordion-button::after {
+    display: none !important;
+}
+
+/* Tạo hình tròn màu xanh và dấu + bằng Bootstrap Icons */
+.custom-faq .accordion-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-icon-box {
+    width: 30px;
+    height: 30px;
+    background-color: #7CFF01;
+    /* Màu xanh lá như ảnh */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    /* Dấu cộng màu đen cho rõ */
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Hiệu ứng xoay khi mở câu hỏi */
+.accordion-button:not(.collapsed) .faq-icon-box {
+    transform: rotate(45deg);
+    /* Xoay dấu + thành dấu x hoặc bạn có thể đổi icon */
+    background-color: #fff;
+    /* Đổi sang màu trắng khi mở cho đẹp */
+}
+
+/* Khi mở ra thì đổi thành dấu trừ hoặc xoay nhẹ */
+.custom-faq .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'%3e%3cpath fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/%3e%3c/svg%3e");
+    transform: rotate(180deg);
+}
+
+.custom-faq .accordion-button:focus {
+    box-shadow: none;
+}
+
+/* form lh tele */
+/* Bóp gọn độ rộng Form */
+.contact-form-premium {
+    max-width: 400px;
+    /* Độ rộng cực gọn */
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+}
+
+/* Tùy chỉnh các ô nhập có Icon */
+.input-group-custom {
+    position: relative;
+}
+
+.input-group-custom i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0084ff;
+    /* Màu xanh thương hiệu của bạn */
+}
+
+/* Căn chỉnh riêng cho icon của textarea */
+.input-group-custom textarea~i {
+    top: 25px;
+}
+
+.input-group-custom input,
+.input-group-custom textarea {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.input-group-custom input:focus,
+.input-group-custom textarea:focus {
+    border-color: #0084ff;
+    box-shadow: 0 0 8px rgba(0, 132, 255, 0.1);
+}
+
+/* Nút bấm */
+.btn-submit-premium {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #0084ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit-premium:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* content gt */
+
+.news-intro {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    /* Tăng độ rộng tổng thể */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.entry-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.entry-meta {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* CSS CHO ẢNH TO DƯỚI TIÊU ĐỀ */
+.big-hero-image {
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+.big-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.entry-sapo {
+    font-size: 19px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 40px;
+    border-left: 5px solid #ff6b6b;
+    padding-left: 20px;
+}
+
+/* BỐ CỤC NỘI DUNG */
+.entry-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .entry-content-wrapper {
+        flex-direction: row;
+    }
+
+    .entry-image-sidebar {
+        flex: 1.5;
+    }
+
+    .entry-text {
+        flex: 1.2;
+    }
+}
+
+.image-caption {
+    font-size: 13px;
+    color: #777;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ẢNH NHỎ XEN KẼ TRONG CHỮ */
+.inline-image {
+    margin: 35px 0;
+}
+
+.inline-image img,
+.entry-image-sidebar img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+blockquote {
+    font-size: 20px;
+    font-style: italic;
+    color: #ff6b6b;
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background: #fff5f5;
+    border-radius: 10px;
+}
+
+/* ============================================================
+   CHÍNH SÁCH DỊCH VỤ
+   ============================================================ */
+
+.policy-grid-container {
+    display: grid;
+    /* Chia cột: Trái 2 phần, Phải 5 phần dựa trên hệ thống Grid */
+    grid-template-columns: 2fr 5fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    align-items: start;
+}
+
+/* SIDEBAR MỤC LỤC (Bên trái) */
+.policy-sidebar {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 120px;
+    /* Cách Header 70px + khoảng hở 20px */
+    z-index: 10;
+}
+
+.policy-toc-title {
+    padding: 0 25px 15px;
+    font-weight: 800;
+    font-size: 17px;
+    color: #111;
+    border-bottom: 2px solid #0084ff;
+    /* Đồng bộ màu xanh của bạn */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.policy-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.policy-toc-item {
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.policy-toc-item::before {
+    content: "•";
+    color: #ccc;
+    margin-right: 10px;
+}
+
+.policy-toc-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hover & Active đồng bộ với Navbar của bạn */
+.policy-toc-item:hover,
+.policy-toc-item.active {
+    background: rgba(0, 132, 255, 0.05);
+    border-left: 3px solid #0084ff;
+}
+
+.policy-toc-item:hover .policy-toc-link,
+.policy-toc-item.active .policy-toc-link {
+    color: #0084ff;
+}
+
+/* NỘI DUNG CHÍNH (Bên phải) */
+.policy-main-content {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.policy-main-content h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+.policy-main-content img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.policy-text-block {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Khối trích dẫn giống kiểu Sapô của bạn */
+.policy-quote {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin: 30px 0;
+    border-left: 5px solid #0084ff;
+    padding-left: 20px;
+    background: #f0f7ff;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 991px) {
+    .policy-grid-container {
+        grid-template-columns: 1fr;
+        /* Chuyển thành 1 cột */
+        gap: 20px;
+    }
+
+    .policy-sidebar {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+
+
