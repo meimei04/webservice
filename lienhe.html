@@ -20,55 +20,54 @@
 
     <header>
     <nav class="navbar navbar-expand-lg fixed-top custom-nav">
-        <div class="container-fluid px-4">
-            <button class="btn border-0 shadow-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarLeft">
-                <i class="bi bi-list fs-2"></i>
-            </button>
+            <div class="container-fluid px-4">
+                <button class="btn border-0 shadow-none me-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebarLeft">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
 
-            <a class="navbar-brand fw-bold" href="./index.html">
-                <img src="img/logo.png" alt=" Logo" class="logo-img">
-            </a>
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="img/logo.png" alt="Logo" class="logo-img">
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navContent">
+                    <i class="bi bi-grid-3x3-gap-fill fs-2 text-dark"></i>
+                </button>
 
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-                <i class="bi bi-grid-3x3-gap-fill fs-2 text-dark"></i>
-            </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navContent">
+                    <ul class="navbar-nav gap-3">
+                        <li class="nav-item"><a class="nav-link" href="index.html">TRANG CHỦ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gioithieu.html">GIỚI THIỆU</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown">DỊCH VỤ</a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="serv/chinhsach.html">Chính sách bảo hành</a></li>
+                                <li><a class="dropdown-item" href="serv/tttt.html">Tiếp Thị Trực Tuyến</a></li>
+                                <li><a class="dropdown-item" href="serv/ship.html">Dịch Vụ Vận Chuyển</a></li>
+                                <li><a class="dropdown-item" href="serv/marketing.html">Đào Tạo Marketing</a></li>
+                                <li><a class="dropdown-item" href="serv/AI.html">Chuyên Viên AI</a></li>
+                                <li><a class="dropdown-item" href="serv/fullfillment.html">Dịch Vụ Vận Chuyển FULLFILLMENT</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">HỎI ĐÁP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lienhe.html">LIÊN HỆ</a></li>
+                    </ul>
+                </div>
 
-            <div class="collapse navbar-collapse" id="navContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="./index.html">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./gioithieu.html">Giới Thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./lienhe.html">Liên Hệ</a></li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link " href="" id="servDropdown" role="button" data-bs-toggle="dropdown">
-                            Dịch vụ
-                        </a>
-                        <ul class="dropdown-menu border-0 shadow-sm">
-                            <li><a class="dropdown-item" href="../serv/chinhsach.html">Chính sách bán hàng</a></li>
-                            <li><a class="dropdown-item" href="../serv/tttt.html">Tiếp Thị Trực Tuyến</a></li>
-                            <li><a class="dropdown-item" href="../serv/ship.html">Dịch Vụ Vận chuyển</a></li>
-                            <li><a class="dropdown-item" href="../serv/marketing.html">Đào tạo Marketing</a></li>
-                            <li><a class="dropdown-item" href="../serv/ai.html">Chuyên viên AI</a></li>
-                            <li><a class="dropdown-item" href="../serv/fullfillment.html">Vận Chuyển FULLFILLMENT</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="./faq.html">Câu Hỏi Thường Gặp</a></li>
-
                     <li class="nav-item ms-lg-3">
                         <select class="form-select form-select-sm lang-select" onchange="changeLang(this.value)">
                             <option value="">Language</option>
-                            <option value="vi">🇻🇳 Tiếng Việt</option>
-                             <option value="lo">🇱🇦 Lào</option>
-                            <option value="my">🇹🇭 Thái</option>
-                            <option value="km">🇰🇭 Campuchia</option>
+                            <option value="vi"> Tiếng Việt</option>
+                            <option value="lo"> Lào</option>
+                            <option value="my"> Thái</option>
+                            <option value="km"> Campuchia</option>
                         </select>
                     </li>
+                    <div id="google_translate_element" style="display:none;"></div>
                 </ul>
-                <div id="google_translate_element" style="display:none;"></div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
      <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="sidebarLeft">
             <div class="offcanvas-header border-bottom">
