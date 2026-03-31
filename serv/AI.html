@@ -25,17 +25,19 @@
             <div class="container-fluid px-4">
                 <button class="btn border-0 shadow-none me-2" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#sidebarLeft">
-                    <i class="bi bi-list fs-2 text-dark"></i>
+                    <i class="bi bi-list fs-2"></i>
                 </button>
 
-                <a class="navbar-brand fw-bold fs-3" href="../index.html">
-                    <!-- meimei<span class="text-primary">04</span> -->
-                    <img src="../img/logo.png" alt="Teddy" width="80" height="60" class="mt-1">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="../img/logo.png" alt="Logo" class="logo-img">
                 </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navContent">
+                    <i class="bi bi-grid-3x3-gap-fill fs-2 text-dark"></i>
+                </button>
 
-                <div class="collapse navbar-collapse" id="navContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-
+                <div class="collapse navbar-collapse justify-content-center" id="navContent">
+                    <ul class="navbar-nav gap-3">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="../gioithieu.html">Giới Thiệu</a></li>
                         <li class="nav-item dropdown">
@@ -44,10 +46,11 @@
                             </a>
                             <ul class="dropdown-menu border-0 shadow-sm">
                                 <li><a class="dropdown-item" href="chinhsach.html">Chính sách bán hàng</a></li>
-                                <li><a class="dropdown-item" href="tttt.html">Tiếp Thị Trực Tuyến</a></li>
+                                <li><a translate="no" class="dropdown-item" href="tttt.html">Marketing Online</a></li>
                                 <li><a class="dropdown-item" href="ship.html">Dịch Vụ Vận chuyển</a></li>
-                                <li><a class="dropdown-item" href="marketing.html">Đào tạo Marketing</a></li>
-                                <li><a class="dropdown-item" href="ai.html">Chuyên viên AI</a></li>
+                                <li><a translate="no" class="dropdown-item" href="marketing.html">Digital Marketing</a>
+                                </li>
+                                <li><a class="dropdown-item" href="ai.html">Giải pháp AI Và Công Nghệ</a></li>
                                 <li><a class="dropdown-item" href="fullfillment.html">Vận Chuyển FULLFILLMENT</a>
                                 </li>
                             </ul>
@@ -55,21 +58,21 @@
                         <li class="nav-item"><a class="nav-link" href="../faq.html">Hỏi Đáp</a></li>
                         <li class="nav-item"><a class="nav-link" href="../lienhe.html">Liên Hệ</a></li>
 
-                        <li class="nav-item ms-lg-3">
-                            <select class="form-select form-select-sm lang-select" onchange="changeLang(this.value)">
-                                <option value="">Language</option>
-                                <option value="vi">🇻🇳 Tiếng Việt</option>
-                                <option value="lo">🇱🇦 Lào</option>
-                                <option value="my">🇹🇭 Thái</option>
-                                <option value="km">🇰🇭 Campuchia</option>
-                            </select>
-                        </li>
-                        <div id="google_translate_element" style="display:none;"></div>
-
                     </ul>
-
                 </div>
-            </div>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item ms-lg-3">
+                        <select class="form-select form-select-sm lang-select" onchange="changeLang(this.value)">
+                            <option value="">Language</option>
+                            <option value="vi">🇻🇳 Tiếng Việt</option>
+                            <option value="lo">🇱🇦 Lào</option>
+                            <option value="my">🇹🇭 Thái</option>
+                            <option value="km">🇰🇭 Campuchia</option>
+                        </select>
+                    </li>
+                    <div id="google_translate_element" style="display:none;"></div>
+                </ul>
         </nav>
 
         <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="sidebarLeft">
@@ -97,9 +100,8 @@
 
                     <li class="mb-3 dropdown custom-dropdown-item">
                         <button
-                            class="text-decoration-none text-dark fs-5 py-2 d-block align-items-center justify-content-between w-100 border-0 bg-transparent"
+                            class="text-decoration-none text-dark fs-5 py-2 d-flex align-items-center justify-content-between w-100 border-0 bg-transparent"
                             data-bs-toggle="collapse" data-bs-target="#subServiceMenu" aria-expanded="false">
-
                             <span><i class="bi bi-briefcase me-2"></i> Dịch vụ</span>
                             <i class="bi bi-chevron-down small transition-icon"></i>
                         </button>
@@ -107,13 +109,14 @@
                             <ul class="list-unstyled p-2 mb-0">
                                 <li><a class="dropdown-item py-2 text-dark" href="chinhsach.html">Chính sách bán
                                         hàng</a></li>
-                                <li><a class="dropdown-item py-2 text-dark" href="tttt.html">Tiếp Thị Trực
-                                        Tuyến</a></li>
+                                <li><a translate="no" class="dropdown-item py-2 text-dark" href="tttt.html">Marketing
+                                        Online</a></li>
                                 <li><a class="dropdown-item py-2 text-dark" href="ship.html">Dịch Vụ Vận
                                         chuyển</a></li>
-                                <li><a class="dropdown-item py-2 text-dark" href="marketing.html">Đào tạo
+                                <li><a translate="no" class="dropdown-item py-2 text-dark" href="marketing.html">Digital
                                         Marketing</a></li>
-                                <li><a class="dropdown-item py-2 text-dark" href="ai.html">Chuyên viên AI</a></li>
+                                <li><a class="dropdown-item py-2 text-dark" href="ai.html">Giải pháp AI Và Công Nghệ</a>
+                                </li>
                                 <li><a class="dropdown-item py-2 text-dark" href="fullfillment.html">Vận Chuyển
                                         FULLFILLMENT</a></li>
                             </ul>
@@ -131,7 +134,7 @@
                         <div class="d-flex gap-3">
                             <a href="#" class="fs-4 text-primary"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="fs-4 text-danger"><i class="bi bi-youtube"></i></a>
-                            
+
                         </div>
                     </li>
                 </ul>
@@ -173,53 +176,66 @@
                 Những Dịch Vụ <small style="color:#0084ff; font-size:11px; cursor:pointer"></small>
             </div>
             <ul class="policy-toc-list">
-                <li class="policy-toc-item "><a href="chinhsach.html" class="policy-toc-link">Chính Sách Bán Hàng</a></li>
-                <li class="policy-toc-item "><a href="tttt.html" class="policy-toc-link">Tiếp Thị Trực Tuyến</a></li>
+                <li class="policy-toc-item "><a href="chinhsach.html" class="policy-toc-link">Chính Sách Bán Hàng</a>
+                </li>
+                <li class="policy-toc-item "><a translate="no" href="tttt.html" class="policy-toc-link">Marketing
+                        Online</a></li>
                 <li class="policy-toc-item"><a href="ship.html" class="policy-toc-link">Dịch Vụ Vận chuyển</a></li>
-                <li class="policy-toc-item "><a href="marketing.html" class="policy-toc-link">Đào tạo Marketing</a></li>
-                <li class="policy-toc-item active"><a href="AI.html" class="policy-toc-link">Chuyên Viên AI</a></li>
-                <li class="policy-toc-item"><a href="fullfillment.html" class="policy-toc-link">Dịch Vụ Vận Chuyển FULLFILLMENT</a></li>
+                <li class="policy-toc-item "><a translate="no" href="marketing.html" class="policy-toc-link">Digital
+                        Marketing</a></li>
+                <li class="policy-toc-item active"><a href="AI.html" class="policy-toc-link">Giải pháp AI Và Công
+                        Nghệ</a></li>
+                <li class="policy-toc-item"><a href="fullfillment.html" class="policy-toc-link">Dịch Vụ Vận Chuyển
+                        FULLFILLMENT</a></li>
             </ul>
         </aside>
 
         <article class="policy-main-content">
             <!-- 1. -->
-            <h2>1. Chính sách bán hàng là gì?</h2>
+            <h2>Giải pháp AI Và Công Nghệ</h2>
 
-            <img src="../img/mazda3.jpg" alt="Chính sách bán hàng">
+
 
             <div class="policy-quote">
-                Chính sách bán hàng là một tập hợp các quy định, chiến lược và phương pháp của doanh nghiệp
+                Giải pháp AI và công nghệ của chúng tôi được xây dựng nhằm giúp doanh nghiệp thích nghi nhanh chóng với
+                sự thay đổi của thời đại số, đồng thời tối ưu hóa toàn bộ hoạt động vận hành và nâng cao hiệu quả kinh
+                doanh. Trong bối cảnh cạnh tranh ngày càng khốc liệt, việc ứng dụng trí tuệ nhân tạo (AI) và các nền
+                tảng công nghệ tiên tiến không chỉ giúp doanh nghiệp tiết kiệm chi phí mà còn mở ra những cơ hội tăng
+                trưởng vượt bậc. Chúng tôi hiểu rằng mỗi doanh nghiệp đều có những thách thức riêng, vì vậy các giải
+                pháp được thiết kế linh hoạt, phù hợp với từng lĩnh vực và mục tiêu cụ thể.
             </div>
-
+            <img src="../img/ai1.jpg" alt="AI">
             <div class="policy-text-block">
-                <p>Chính sách bán hàng là một tập hợp các quy định, chiến lược và phương pháp mà một doanh nghiệp sử
-                    dụng để lên kế hoạch, quảng bá và tiếp thị sản phẩm hoặc dịch vụ của mình đến khách hàng.
-
-                    Chính sách bán hàng giúp định rõ cách thức doanh nghiệp sẽ tiếp cận, chăm sóc và tương tác với khách
-                    hàng trong quá trình bán hàng và sau bán hàng, từ đó giúp xây dựng hình ảnh thương hiệu và thúc đẩy
-                    tăng doanh số bán hàng hiệu quả.</p>
+                <p>Dịch vụ của chúng tôi bao gồm nhiều mảng quan trọng như tự động hóa quy trình (Automation), phân tích
+                    dữ liệu nâng cao (Advanced Analytics), trí tuệ nhân tạo trong chăm sóc khách hàng (AI Chatbot), hệ
+                    thống quản trị thông minh (Smart Management Systems) và các nền tảng hỗ trợ ra quyết định dựa trên
+                    dữ liệu. Nhờ vào việc tích hợp AI vào các quy trình vận hành, doanh nghiệp có thể giảm thiểu sai
+                    sót, nâng cao năng suất làm việc và tối ưu hóa nguồn lực một cách hiệu quả. Đặc biệt, các giải pháp
+                    như xử lý ngôn ngữ tự nhiên (NLP) và thị giác máy tính (Computer Vision) giúp doanh nghiệp khai thác
+                    dữ liệu phi cấu trúc, từ đó tạo ra những giá trị mới mà trước đây khó có thể đạt được.</p>
+                    <img src="../img/ai2.jpg" alt="AI">
+                <p>Một trong những điểm mạnh nổi bật của chúng tôi là khả năng chuyển đổi dữ liệu thành thông tin có giá
+                    trị. Thông qua việc thu thập, xử lý và phân tích dữ liệu theo thời gian thực, doanh nghiệp có thể
+                    hiểu rõ hơn về hành vi khách hàng, xu hướng thị trường và hiệu quả hoạt động kinh doanh. Từ đó, các
+                    quyết định chiến lược được đưa ra một cách chính xác và kịp thời, giúp doanh nghiệp luôn đi trước
+                    đối thủ. Không chỉ dừng lại ở việc triển khai công nghệ, chúng tôi còn hỗ trợ đào tạo đội ngũ nhân
+                    sự, đảm bảo doanh nghiệp có thể khai thác tối đa tiềm năng của hệ thống AI.</p>
+                <p>Đội ngũ chuyên gia của chúng tôi bao gồm các kỹ sư phần mềm, chuyên gia dữ liệu và nhà tư vấn công
+                    nghệ có nhiều năm kinh nghiệm thực tiễn trong nhiều ngành nghề khác nhau. Chúng tôi luôn cập nhật
+                    các xu hướng công nghệ mới nhất như Machine Learning, Deep Learning, Internet of Things (IoT) và
+                    điện toán đám mây (Cloud Computing), từ đó mang đến những giải pháp hiện đại, dễ triển khai và có
+                    khả năng mở rộng cao. Sự kết hợp giữa kiến thức chuyên môn sâu rộng và tư duy đổi mới giúp chúng tôi
+                    tạo ra những sản phẩm công nghệ phù hợp với nhu cầu thực tế của doanh nghiệp.</p>
+                    <img src="../img/ai3.jpg" alt="AI">
+                <p>Bên cạnh đó, chúng tôi đặc biệt chú trọng đến vấn đề bảo mật và an toàn thông tin. Tất cả các giải
+                    pháp đều được xây dựng theo các tiêu chuẩn bảo mật nghiêm ngặt, đảm bảo dữ liệu của doanh nghiệp
+                    luôn được bảo vệ tối đa. Đồng thời, hệ thống được thiết kế với khả năng mở rộng linh hoạt, giúp
+                    doanh nghiệp dễ dàng nâng cấp và thích ứng với sự phát triển trong tương lai. Với cam kết mang lại
+                    giá trị bền vững, giải pháp AI và công nghệ của chúng tôi không chỉ giúp doanh nghiệp tối ưu hiện
+                    tại mà còn tạo nền tảng vững chắc cho sự phát triển lâu dài trong kỷ nguyên số.</p>
             </div>
             <!-- end 1 -->
-            <!-- 2 -->
-            <h2>2. Mục đích và tầm quan trọng của chính sách bán hàng</h2>
-
-            <img src="../img/mazda3.jpg" alt="Chính sách bán hàng">
-
-            <div class="policy-quote">
-                Chính sách bán hàng là rất quan trọng trong việc định hình và điều hướng hoạt động bán hàng của doanh
-                nghiệp.
-            </div>
-
-            <div class="policy-text-block">
-                <p>Chính sách bán hàng là một tập hợp các quy định, chiến lược và phương pháp mà một doanh nghiệp sử
-                    dụng để lên kế hoạch, quảng bá và tiếp thị sản phẩm hoặc dịch vụ của mình đến khách hàng.
-
-                    Chính sách bán hàng giúp định rõ cách thức doanh nghiệp sẽ tiếp cận, chăm sóc và tương tác với khách
-                    hàng trong quá trình bán hàng và sau bán hàng, từ đó giúp xây dựng hình ảnh thương hiệu và thúc đẩy
-                    tăng doanh số bán hàng hiệu quả.</p>
-            </div>
-            <!-- end 2 -->
+           
         </article>
     </section>
 
@@ -305,7 +321,7 @@
     <!-- end-ban lãnh đạo -->
 
 
-   <footer class="footer-wrapper">
+    <footer class="footer-wrapper">
         <div class="footer-top-info py-5">
             <div class="container">
                 <div class="row g-4">
@@ -313,7 +329,7 @@
                         <h5 class="fw-bold mb-4">về chúng tôi</h5>
                         <ul class="list-unstyled footer-links">
                             <li><a href="chinhsach.html">Chính sách bán hàng</a></li>
-                           
+
                         </ul>
                         <a href="../index.html">
                             <img src="../img/logo.png" alt="logo" width="100" class="mt-3">

@@ -311,3 +311,25 @@ function toggleContact(type) {
     // Luôn kiểm tra để ẩn banner mỗi khi trang load
     setInterval(hideGoogleBanner, 500);
 });
+
+const boxes = document.querySelectorAll('.why-box');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+
+  boxes.forEach(box => {
+    const top = box.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      box.style.opacity = 1;
+      box.style.transform = "translateY(0)";
+    }
+  });
+});
+
+// mặc định ẩn
+boxes.forEach(box => {
+  box.style.opacity = 0;
+  box.style.transform = "translateY(40px)";
+  box.style.transition = "0.5s";
+});

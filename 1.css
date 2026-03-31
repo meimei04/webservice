@@ -4,10 +4,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: #F4E9D8;
 }
 
 body {
@@ -21,7 +23,7 @@ body {
 /* --- 2. Header & Navbar Custom --- */
 /* --- Nâng cấp Navbar --- */
 .custom-nav {
-    background: #fff !important;
+    background: #f8f9fa !important;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -57,7 +59,64 @@ body {
     color: #444 !important;
 
 }
+.why-us {
+  background: #f8f9fa;
+  padding: 60px 20px;
+}
 
+.why-us .container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.why-box {
+  background: #fff;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  text-align: center;
+  padding: 40px 25px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.why-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  background: #ff7a1a;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.why-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.why-box p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.why-box a {
+  color: #ff7a1a;
+  text-decoration: none;
+  font-weight: 500;
+}
 /* Hiệu ứng gạch chân (Underline) khi hover thay vì zoom */
 .nav-link::after {
     content: '';
@@ -1015,5 +1074,161 @@ blockquote {
         margin-bottom: 20px;
     }
 }
+/* giới thiệu */
+.mekong-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: #2bb3a8;
+  text-transform: uppercase;
+}
+
+.mekong-heading .dot {
+  color: #f4c542;
+}
 
 
+
+/* // */
+.cta {
+    background: #f37021;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+
+    max-width: 90%;   
+    margin: 50px auto;   
+    border-radius: 10px; 
+}
+/* viền giống thước */
+.cta::before,
+.cta::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    
+}
+
+.cta::before {
+    top: 0;
+}
+
+.cta::after {
+    bottom: 0;
+}
+
+.cta-content h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.phone {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.or {
+    font-size: 18px;
+}
+
+.btn-contact {
+    background: #1c2b39;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background: #000;
+}
+
+.rating i {
+    color: gold;
+    font-size: 20px;
+}
+
+/* bloger */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 👈 4 cột = 1 hàng */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr); /* tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-grid {
+        grid-template-columns: 1fr; /* mobile */
+    }
+}
+.blog-card {
+    display: block; /* 👈 quan trọng để click toàn bộ */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    padding-bottom: 10px;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ẢNH */
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+/* HOVER ẢNH */
+.blog-card:hover img {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.blog-card h4 {
+    padding: 15px 15px 5px;
+}
+
+.blog-card p {
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+/* XEM THÊM */
+.read-more {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #f37021;
+    font-weight: bold;
+}
